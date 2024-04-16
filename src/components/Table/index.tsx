@@ -3,14 +3,15 @@ const Table = () => {
     <div>
       <table>
         <thead>
-          <th>
-            <td>#</td>
-            <td>City</td>
-            <td>Country</td>
-            <td>Region</td>
-            <td>Population</td>
-          </th>
+          <tr>
+            <th>#</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Region</th>
+            <th>Population</th>
+          </tr>
         </thead>
+
         <tbody>
           {/* {data.map((item, index)=>{
                 return (<tr>
