@@ -3,10 +3,13 @@
 To run this project, please follow the following command:
 
 1. Clone this repository by following the command in terminal/cmd:
+
    `git clone https://github.com/AshutoshDash1999/solvative-assignment`
 
 2. Go to the downloaded directory and install dependencies
+
    a. `cd solvative-assignment`
+
    b. `npm i`
 
 3. In the root of project, create a new file as `.env`.
