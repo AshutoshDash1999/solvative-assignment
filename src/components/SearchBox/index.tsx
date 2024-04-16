@@ -1,4 +1,5 @@
 import fetchCityInfo from "../../api";
+import KeyboardShortcut from "../KeyboardShortcut";
 
 const SearchBox = (props) => {
   async function getCities() {
@@ -9,6 +10,11 @@ const SearchBox = (props) => {
       console.error("Failed to fetch cities:", error);
     }
   }
-  return <div>SearchBox</div>;
+  return (
+    <div className="searchbox__container">
+      <input placeholder="Search places" />
+      <KeyboardShortcut>Ctrl + /</KeyboardShortcut>
+    </div>
+  );
 };
 export default SearchBox;
