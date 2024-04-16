@@ -1,11 +1,5 @@
 import axios from "axios";
 
-interface FetchCityInfoProps {
-  countryId: string;
-  namePrefix: string;
-  limit: number | string;
-}
-
 const fetchCityInfo = async (
   countryId: string,
   namePrefix: string,
@@ -27,6 +21,7 @@ const fetchCityInfo = async (
 
   try {
     const response = await axios.request(options);
+    console.log("response", response);
     return response.data;
   } catch (error) {
     console.error("Error while fetching cities:", error);

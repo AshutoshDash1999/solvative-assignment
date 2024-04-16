@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
-const DataLimitSlider = () => {
-  const [dataLimitValue, setDataLimitValue] = useState("5");
+const DataLimitSlider = ({
+  dataLimit,
+  setDataLimit,
+}: {
+  dataLimit: string;
+  setDataLimit: Dispatch<SetStateAction<string>>;
+}) => {
   return (
     <div className="datalimit__slider">
       <h3>Data Limit:</h3>
@@ -9,10 +14,10 @@ const DataLimitSlider = () => {
         type="range"
         min="1"
         max="10"
-        value={dataLimitValue}
-        onChange={(e) => setDataLimitValue(e.target.value)}
+        value={dataLimit}
+        onChange={(e) => setDataLimit(e.target.value)}
       />
-      <h3>{dataLimitValue}</h3>
+      <h3>{dataLimit}</h3>
     </div>
   );
 };
