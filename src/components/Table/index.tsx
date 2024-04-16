@@ -9,18 +9,29 @@ interface CityDataProps {
 }
 
 interface TableDataProps {
-  cityData: CityDataProps[];
+  cityData: CityDataProps[] | null;
   isDataLoading: boolean;
+  cityInput: string;
 }
 
-const Table: FC<TableDataProps> = ({ cityData, isDataLoading }) => {
+const Table: FC<TableDataProps> = ({ cityData, isDataLoading, cityInput }) => {
   if (isDataLoading) {
     return <div className="loader"></div>;
   }
 
   return (
     <div>
-      {cityData.length > 0 && !isDataLoading ? (
+      {cityInput.length === 0 ? <h2>Start Searching</h2> : null}
+
+      {cityInput.length !== 0 && !cityData ? (
+        <h2>Press "Enter" to Search</h2>
+      ) : null}
+
+      {cityData?.length === 0 && cityInput.length !== 0 ? (
+        <h2>No Results Found</h2>
+      ) : null}
+
+      {!!cityData && cityData?.length > 0 && !isDataLoading ? (
         <table>
           <thead>
             <tr>
@@ -33,7 +44,7 @@ const Table: FC<TableDataProps> = ({ cityData, isDataLoading }) => {
           </thead>
 
           <tbody>
-            {cityData.map((item: CityDataProps, index: number) => {
+            {cityData?.map((item: CityDataProps, index: number) => {
               console.log(item);
               return (
                 <tr key={item?.id}>

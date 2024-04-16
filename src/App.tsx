@@ -6,8 +6,10 @@ import Table from "./components/Table";
 
 function App() {
   const [dataLimit, setDataLimit] = useState("5");
-  const [cityData, setCityData] = useState<[]>([]);
+  const [cityData, setCityData] = useState<[] | null>(null);
   const [isDataLoading, setIsDataLoading] = useState<boolean>(false);
+  const [cityInput, setCityInput] = useState<string>("");
+
   return (
     <>
       <div>
@@ -15,10 +17,16 @@ function App() {
           dataLimit={dataLimit}
           setCityData={setCityData}
           setIsDataLoading={setIsDataLoading}
+          cityInput={cityInput}
+          setCityInput={setCityInput}
         />
         <DataLimitSlider dataLimit={dataLimit} setDataLimit={setDataLimit} />
 
-        <Table cityData={cityData} isDataLoading={isDataLoading} />
+        <Table
+          cityData={cityData}
+          isDataLoading={isDataLoading}
+          cityInput={cityInput}
+        />
       </div>
     </>
   );
