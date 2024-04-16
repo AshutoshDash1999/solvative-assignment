@@ -41,3 +41,9 @@
   justify-content: center;
   align-items: center;
 }
+
+.datalimit__slider {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
