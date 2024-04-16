@@ -44,7 +44,7 @@ const SearchBox = ({
       } catch (error) {
         console.error("Failed to fetch cities:", error);
       } finally {
-        setIsDataLoading(true);
+        setIsDataLoading(false);
       }
     }
   };
