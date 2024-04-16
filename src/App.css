@@ -1,12 +1,13 @@
 .searchbox__container {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 0.5em;
+  width: 100%;
+  max-width: 241px;
   margin: 1rem;
   border: 1px solid rgb(206, 212, 218);
   border-radius: 2px;
-  width: 241px;
   height: 38px;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
@@ -14,8 +15,11 @@
 }
 
 .searchbox__input {
+  display: block;
+  width: 100%;
+  padding: 4px;
   border: none;
-  padding-right: 0.5rem;
+  flex-grow: 1;
 }
 
 .searchbox__input:focus {
@@ -34,12 +38,13 @@
 .keyboard__shortcut__container {
   font-size: 12px;
   border: 1px solid rgb(222, 226, 230);
-  border-radius: 2px;
+  border-radius: 4px;
   height: 24px;
-  padding: 0 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  word-break: keep-all;
+  word-wrap: normal;
+  width: 80px;
+  padding: 6px;
+  background-color: #fcfcfc;
 }
 
 .datalimit__slider {

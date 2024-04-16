@@ -44,7 +44,7 @@ const SearchBox = () => {
         ref={inputRef}
         onKeyDown={searchCityHandler}
       />
-      <KeyboardShortcut>Ctrl + /</KeyboardShortcut>
+      <KeyboardShortcut>Ctrl &#43; &#47;</KeyboardShortcut>
     </div>
   );
 };
