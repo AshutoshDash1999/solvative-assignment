@@ -12,7 +12,7 @@ const SearchBox = (props) => {
   }
   return (
     <div className="searchbox__container">
-      <input placeholder="Search places" />
+      <input placeholder="Search places..." className="searchbox__input" />
       <KeyboardShortcut>Ctrl + /</KeyboardShortcut>
     </div>
   );
