@@ -20,8 +20,6 @@ const SearchBox = ({
       if (event.ctrlKey && event.key === "/") {
         event.preventDefault();
         inputRef.current?.focus();
-
-        console.log("key pressed");
       }
     };
 
@@ -39,7 +37,6 @@ const SearchBox = ({
       try {
         setIsDataLoading(true);
         const cities = await fetchCityInfo("IN", cityInput, dataLimit);
-        console.log("cities?.data", cities?.data);
         setCityData(cities?.data);
       } catch (error) {
         console.error("Failed to fetch cities:", error);
